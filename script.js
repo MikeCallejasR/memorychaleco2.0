@@ -11,19 +11,18 @@ window.addEventListener('DOMContentLoaded', () => {
   // Datos para los modos de juego (usa tus propias imágenes en producción)
   const themes = {
     animales: [
-      { palabra: "perro", imagen: "https://placehold.co/100x100/4b7bec/white?text=🐶" },
-      { palabra: "gato", imagen: "https://placehold.co/100x100/4b7bec/white?text=🐱" },
-      { palabra: "pájaro", imagen: "https://placehold.co/100x100/4b7bec/white?text=🐦" },
-      { palabra: "pez", imagen: "https://placehold.co/100x100/4b7bec/white?text=🐠" },
+      { palabra: "perro", imagen: "images/animales/dog.png" },
+      { palabra: "gato", imagen: "images/animales/cat.png" },
+      { palabra: "pájaro", imagen: "images/animales/bird.png" },
+      { palabra: "pez", imagen: "images/animales/clown-fish.png"},
     ],
     frutas: [
-      { palabra: "manzana", imagen: "https://placehold.co/100x100/4b7bec/white?text=🍎" },
-      { palabra: "banana", imagen: "https://placehold.co/100x100/4b7bec/white?text=🍌" },
-      { palabra: "uva", imagen: "https://placehold.co/100x100/4b7bec/white?text=🍇" },
-      { palabra: "naranja", imagen: "https://placehold.co/100x100/4b7bec/white?text=🍊" },
+      { palabra: "manzana", imagen: "images/frutas/apple.png" },
+      { palabra: "banana", imagen: "images/frutas/banana.png" },
+      { palabra: "uva", imagen: "images/frutas/grape.png" },
+      { palabra: "naranja", imagen: "images/frutas/oragen.png },
     ]
   };
-
   // Generar cartas según el modo
   const generateCards = () => {
     const pairs = [];
