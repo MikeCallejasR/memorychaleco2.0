@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Memoria</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <form class="form">
+      <h1>Juego de Memoria</h1>
+      <div class="form-group">
+        <label for="difficulty">Dificultad:</label>
+        <select id="difficulty">
+          <option value="4">Fácil (4 pares)</option>
+          <option value="6" selected>Medio (6 pares)</option>
+          <option value="8">Difícil (8 pares)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Tema:</label>
+        <label><input type="radio" name="theme" value="animales" checked> Animales</label>
+        <label><input type="radio" name="theme" value="frutas"> Frutas</label>
+      </div>
+
+      <div class="form-group">
+        <label>Modo de Juego:</label>
+        <label><input type="radio" name="mode" value="classic" checked> Clásico</label>
+        <label><input type="radio" name="mode" value="image-image"> Imagen-Imagen</label>
+        <label><input type="radio" name="mode" value="word-image"> Palabra-Imagen</label>
+      </div>
+
+      <button type="submit">Comenzar</button>
+    </form>
+
+    <div class="gameboard"></div>
+    <button class="play-again hide">Jugar de Nuevo</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
