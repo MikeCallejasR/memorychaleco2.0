@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // Modo imagen-imagen relacionadas
       for (let i = 0; i < options.difficulty; i++) {
         pairs.push({ tipo: "imagen", valor: themeData[i % themeData.length].imagen });
-        pairs.push({ tipo: "imagen", valor: `https://placehold.co/100x100/FF5252/white?text=🍖` }); // Ejemplo: "hueso"
+        pairs.push({ tipo: "imagen", valor: ``images/animales/hueso.png`` }); // Ejemplo: "hueso"
       }
     }
 
