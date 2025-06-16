@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
       { palabra: "manzana", imagen: "images/frutas/apple.png" },
       { palabra: "banana", imagen: "images/frutas/banana.png" },
       { palabra: "uva", imagen: "images/frutas/grape.png" },
-      { palabra: "naranja", imagen: "images/frutas/oragen.png },
+      { palabra: "naranja", imagen: "images/frutas/oragen.png" },
     ]
   };
   // Generar cartas según el modo
