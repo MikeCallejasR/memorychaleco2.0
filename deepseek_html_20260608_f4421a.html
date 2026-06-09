@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Quiniela Mundial 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Calendario oficial de partidos -->
+    <script src="data/calendario.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 Quiniela Mundial 2026</h1>
+            <p>Canadá, México y Estados Unidos • 11 junio - 19 julio</p>
+            <div class="admin-toggle">
+                <button id="adminBtn" class="btn-secondary">🔒 Admin</button>
+            </div>
+        </header>
+
+        <!-- Panel de administración (oculto por defecto) -->
+        <div id="adminPanel" style="display: none;">
+            <div class="card">
+                <h3>📋 Cargar resultados oficiales</h3>
+                <div id="partidosAdminList"></div>
+            </div>
+        </div>
+
+        <!-- Registro de participantes -->
+        <div class="card" id="registroCard">
+            <h3>👥 Participantes</h3>
+            <div class="form-group">
+                <input type="text" id="participanteNombre" placeholder="Nombre completo" maxlength="50">
+                <button id="agregarParticipanteBtn" class="btn-primary">➕ Agregar</button>
+            </div>
+            <div id="listaParticipantes"></div>
+            <div class="info-box">
+                💡 <strong>Consejo:</strong> Cada persona debe tener un nombre único. Todos los pronósticos quedarán guardados en la nube.
+            </div>
+        </div>
+
+        <!-- Selección de participante activo -->
+        <div class="card" id="seleccionarParticipanteCard" style="display: none;">
+            <h3>👤 Seleccionar participante</h3>
+            <select id="selectParticipante"></select>
+            <button id="confirmarParticipanteBtn" class="btn-primary">✅ Ingresar pronósticos</button>
+        </div>
+
+        <!-- Mensaje de bienvenida al participante activo -->
+        <div id="bienvenidaParticipante" style="display: none;">
+            <div class="card">
+                <h3>Bienvenido, <span id="nombreActivo"></span> ✨</h3>
+                <button id="cambiarParticipanteBtn" class="btn-secondary">🔄 Cambiar participante</button>
+            </div>
+        </div>
+
+        <!-- Calendario de partidos -->
+        <div class="card">
+            <h3>📅 Calendario oficial 2026</h3>
+            <div class="filtros">
+                <button class="filtro-btn active" data-fase="all">Todos</button>
+                <button class="filtro-btn" data-fase="Grupos">Fase Grupos</button>
+                <button class="filtro-btn" data-fase="Eliminatorias">Eliminatorias</button>
+                <button class="filtro-btn" data-fase="Final">Final</button>
+            </div>
+            <div id="calendarioPartidos" class="partidos-grid"></div>
+        </div>
+
+        <!-- Formulario de pronóstico -->
+        <div id="pronosticoForm" style="display: none;">
+            <div class="card">
+                <h3>📝 Pronosticar partido: <span id="partidoPronostico"></span></h3>
+                <div class="form-group">
+                    <label>Goles local:</label>
+                    <input type="number" id="golesLocal" min="0" max="10" value="0">
+                </div>
+                <div class="form-group">
+                    <label>Goles visitante:</label>
+                    <input type="number" id="golesVisitante" min="0" max="10" value="0">
+                </div>
+                <div class="form-group">
+                    <label>Ganador en penales (solo eliminatorias):</label>
+                    <input type="checkbox" id="penalesCheckbox">
+                </div>
+                <div class="form-group">
+                    <label>⚽ Jugador que anotará un gol:</label>
+                    <input type="text" id="jugadorGol" placeholder="Ej: Messi, Mbappé, etc.">
+                    <small>Si aciertas, sumás 1 punto extra</small>
+                </div>
+                <button id="guardarPronosticoBtn" class="btn-primary">💾 Guardar pronóstico</button>
+                <button id="cerrarPronosticoBtn" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Tabla de posiciones -->
+        <div class="card">
+            <h3>🏅 Tabla de posiciones</h3>
+            <div id="tablaPosiciones" class="tabla-posiciones">
+                <div class="loading">Cargando puntajes...</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Datos oficiales FIFA World Cup 2026™. Los puntos se calculan automáticamente.</p>
+            <button id="exportarDatosBtn" class="btn-outline">📥 Exportar respaldo</button>
+            <button id="importarDatosBtn" class="btn-outline">📤 Importar respaldo</button>
+            <input type="file" id="importarArchivo" accept=".json" style="display: none;">
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

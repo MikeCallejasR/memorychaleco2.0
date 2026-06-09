@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0f2a 0%, #0a1a2a 100%);
+    color: #f0f0f0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card h3 {
+    margin-bottom: 1.2rem;
+    color: #ffd700;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffd700;
+}
+
+button {
+    background: #ffd700;
+    color: #0a0f2a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    transform: scale(1.02);
+    background: #ffed4a;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: #0a0f2a;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    margin: 0 0.5rem;
+}
+
+.partidos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.partido-card {
+    background: rgba(0,0,0,0.4);
+    border-radius: 16px;
+    padding: 1rem;
+    transition: all 0.2s;
+    border-left: 4px solid #ffd700;
+}
+
+.partido-card .fecha {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+}
+
+.partido-card .equipos {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.partido-card .resultado {
+    font-size: 0.9rem;
+    color: #ffd700;
+}
+
+.partido-card .pronostico {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.tabla-posiciones {
+    overflow-x: auto;
+}
+
+.tabla-posiciones table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-posiciones th, .tabla-posiciones td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tabla-posiciones th {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+.filtros {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.filtro-btn.active {
+    background: #ffd700;
+    color: #0a0f2a;
+}
+
+.info-box {
+    background: rgba(0,0,0,0.4);
+    padding: 0.8rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .partidos-grid {
+        grid-template-columns: 1fr;
+    }
+}
